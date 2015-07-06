@@ -32,7 +32,7 @@ public class ClientNode {
             LOGGER.info("Sending message...");
             SENT_COUNT.incrementAndGet();
             mediator.tell(new DistributedPubSubMediator.Send("/user/echo", "Hello!"), echoClient);
-        }, 5, 5, TimeUnit.SECONDS);
+        }, 1, 1, TimeUnit.SECONDS);
     }
 
     public static class EchoClient extends UntypedActor {
